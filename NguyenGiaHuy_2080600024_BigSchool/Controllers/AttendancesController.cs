@@ -24,7 +24,8 @@ namespace NguyenGiaHuy_2080600024_BigSchool.Controllers
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == 
+            attendanceDto.CourseId))
                 return BadRequest("The Attendance already exists");
 
             var attendance = new Attendance
